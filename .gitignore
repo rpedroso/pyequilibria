@@ -1,0 +1,14 @@
+.git
+__pycache__
+sandbox
+*.so
+*.cpp
+*.html
+*.py0
+*.py~
+*.wxg~
+*.wxg
+xeq
+venv
+venv39
+tags
