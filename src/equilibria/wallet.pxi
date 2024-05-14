@@ -564,6 +564,29 @@ cdef class Wallet:
         # self.__listener = listener
         cy_set_listener(self.o, listener)
 
+    def add_subaddress_account(self, string label):
+        with nogil:
+            self.o.addSubaddressAccount(label)
+
+    def num_subaddress_accounts(self):
+        cdef int r
+        with nogil:
+            r = self.o.numSubaddressAccounts()
+        return r
+
+    def num_subaddresses(self, uint32_t account_index):
+        cdef int r
+        with nogil:
+            r = self.o.numSubaddresses(account_index)
+        return r
+
+    def get_subaddress_label(self, uint32_t accountIndex,
+                              uint32_t addressIndex):
+        cdef string r
+        with nogil:
+            r = self.o.getSubaddressLabel(accountIndex, addressIndex)
+        return r
+
     def get_bytes_received(self):
         cdef uint64_t r
         with nogil:

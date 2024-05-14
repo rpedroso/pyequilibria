@@ -73,7 +73,7 @@ extensions = [Extension(
                     #'usb',
                     'device',
                     'device_trezor',
-                    #'hidapi-libusb',
+                    'hidapi-libusb',  # Comment this one to create a wheel
                     'ssl',
                     'crypto',
                     'checkpoints',

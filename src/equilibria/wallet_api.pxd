@@ -254,6 +254,12 @@ cdef extern from "wallet2_api.h" namespace "Monero":
 
         void setListener(c_WalletListener *l)
 
+        void addSubaddressAccount(const string& label)
+        size_t numSubaddressAccounts() except + nogil
+        size_t numSubaddresses(uint32_t accountIndex) except + nogil
+        string getSubaddressLabel(uint32_t accountIndex,
+                                  uint32_t addressIndex) except + nogil
+
         uint64_t getBytesReceived()
         uint64_t getBytesSent()
 
