@@ -11,10 +11,7 @@ extensions = [Extension(
     "equilibria.wallet",
     ["src/equilibria/*.pyx"],
 
-    define_macros=[#('FLTK_HAVE_CAIRO', '1'),      
-                    #('CYTHON_METH_FASTCALL', '1'),
-        # ('CYTHON_LIMITED_API', '1'),               
-    ],                                             
+    define_macros=[ ],
     # py_limited_api = True,                         
 
         include_dirs = [
