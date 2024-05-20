@@ -568,6 +568,10 @@ cdef class Wallet:
         with nogil:
             self.o.addSubaddressAccount(label)
 
+    def add_subaddress_account(self, string label):
+        with nogil:
+            self.o.addSubaddressAccount(label)
+
     def num_subaddress_accounts(self):
         cdef int r
         with nogil:
@@ -580,12 +584,21 @@ cdef class Wallet:
             r = self.o.numSubaddresses(account_index)
         return r
 
+    def add_subaddress(self, uint32_t accountIndex, string label):
+        with nogil:
+            self.o.addSubaddress(accountIndex, label)
+
     def get_subaddress_label(self, uint32_t accountIndex,
                               uint32_t addressIndex):
         cdef string r
         with nogil:
             r = self.o.getSubaddressLabel(accountIndex, addressIndex)
         return r
+
+    def set_subaddress_label(self, uint32_t accountIndex,
+                             uint32_t addressIndex, string label):
+        with nogil:
+            self.o.setSubaddressLabel(accountIndex, addressIndex, label)
 
     def get_bytes_received(self):
         cdef uint64_t r
